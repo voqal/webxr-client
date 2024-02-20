@@ -1,11 +1,11 @@
-import {WebXRButton} from './util/webxr-button.js';
-import {Scene, WebXRView} from './render/scenes/scene.js';
-import {createWebGLContext, Renderer} from './render/core/renderer.js';
-import {loadTextureFromImage} from './util/texture-loader.js';
-import {QuadNode} from './render/nodes/quad-texture.js';
-import {VoqalXRClient} from "./voqalxr-client.js";
-import {SkyboxNode} from "./render/nodes/skybox.js";
-import {quat} from "./third-party/gl-matrix/src/gl-matrix.js";
+import {WebXRButton} from 'util/webxr-button.js';
+import {Scene, WebXRView} from 'render/scenes/scene.js';
+import {createWebGLContext, Renderer} from 'render/core/renderer.js';
+import {loadTextureFromImage} from 'util/texture-loader.js';
+import {QuadNode} from 'render/nodes/quad-texture.js';
+import {VoqalXRClient} from "voqalxr-client.js";
+import {SkyboxNode} from "render/nodes/skybox.js";
+import {quat} from "third-party/gl-matrix/src/gl-matrix.js";
 
 export const xrClient = new VoqalXRClient({
     webSocketURL: "wss://signal.voqal.dev:443",
@@ -21,7 +21,7 @@ window.autoConnect = function (id) {
     xrClient.connect(id ?? (parseInt(xrClient.getSessionId()) - 1).toString());
 }
 
-const QUAD_TRANSPARENT_MONO_PATH = './images/transparent.png';
+const QUAD_TRANSPARENT_MONO_PATH = 'images/transparent.png';
 
 // XR globals.
 let xrButton = null;
@@ -36,7 +36,7 @@ let gl = null;
 let renderer = null;
 let scene = new Scene();
 scene.addNode(new SkyboxNode({
-    url: './images/skybox.jpg'
+    url: 'images/skybox.jpg'
 }));
 
 // Layer globals
