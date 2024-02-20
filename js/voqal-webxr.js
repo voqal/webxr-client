@@ -13,15 +13,11 @@ export const xrClient = new VoqalXRClient({
 });
 
 window.connect = function () {
-    let id = prompt("Please enter your id", (parseInt(xrClient.getSessionId()) - 1).toString());
+    let id = prompt("Input session id", "");
     xrClient.connect(id);
 }
 
-window.autoConnect = function (id) {
-    xrClient.connect(id ?? (parseInt(xrClient.getSessionId()) - 1).toString());
-}
-
-const QUAD_TRANSPARENT_MONO_PATH = 'images/transparent.png';
+const QUAD_TRANSPARENT_MONO_PATH = '../images/transparent.png';
 
 // XR globals.
 let xrButton = null;
@@ -36,7 +32,7 @@ let gl = null;
 let renderer = null;
 let scene = new Scene();
 scene.addNode(new SkyboxNode({
-    url: 'images/skybox.jpg'
+    url: '../images/skybox.jpg'
 }));
 
 // Layer globals
