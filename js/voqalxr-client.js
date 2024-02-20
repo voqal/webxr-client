@@ -166,7 +166,7 @@ export class VoqalXRClient {
         console.log('Connecting to session: ' + sessionToConnect);
         this.ws.send(JSON.stringify({
             message: "connect",
-            sessionid: sessionToConnect
+            sessionId: sessionToConnect
         }));
     }
     setupWebSocket() {
@@ -194,7 +194,7 @@ export class VoqalXRClient {
         };
     }
     handleGreeting(message) {
-        this.sessionId = message.sessionid;
+        this.sessionId = message.sessionId;
         console.log('Got session id: ' + this.sessionId);
         this.setupDataChannel();
         if (this.config.transmitAudio) {

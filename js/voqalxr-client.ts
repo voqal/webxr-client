@@ -242,7 +242,7 @@ export class VoqalXRClient {
         console.log('Connecting to session: ' + sessionToConnect);
         this.ws.send(JSON.stringify({
             message: "connect",
-            sessionid: sessionToConnect //todo: sessionId
+            sessionId: sessionToConnect
         }));
     }
 
@@ -273,7 +273,7 @@ export class VoqalXRClient {
     }
 
     private handleGreeting(message: any) {
-        this.sessionId = message.sessionid; //todo: sessionId
+        this.sessionId = message.sessionId;
         console.log('Got session id: ' + this.sessionId)
 
         this.setupDataChannel();
