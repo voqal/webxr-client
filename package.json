@@ -1,0 +1,14 @@
+{
+  "name": "voqal-webxr-client",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-basic-ssl": "^1.0.1",
+    "vite": "5.1.2"
+  }
+}
