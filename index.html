@@ -5,16 +5,6 @@
     <title>Voqal WebXR Client</title>
     <meta charset='utf-8'>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', (event) => {
-            let base = document.createElement('base');
-            let currentUrl = window.location.href;
-            let baseUrl = currentUrl.endsWith('/') ? currentUrl : currentUrl + '/';
-            base.href = baseUrl;
-            document.head.appendChild(base);
-        });
-    </script>
-
     <!-- Stereo layer dependency -->
     <script src="js/wglu/wglu-program.js"></script>
     <script src="js/wglu/wglu-url.js"></script>
@@ -27,5 +17,10 @@
     <button onclick='connect()'>Connect</button>
 </main>
 <script type="module" src='js/voqal-webxr.js'></script>
+<script>
+    if (!window.location.href.endsWith('/') && window.location.hostname === 'voqal.dev') {
+        window.location.href = window.location.href + '/';
+    }
+</script>
 </body>
 </html>
