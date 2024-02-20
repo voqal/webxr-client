@@ -6,6 +6,7 @@ import {QuadNode} from './render/nodes/quad-texture.js';
 import {VoqalXRClient} from "./voqalxr-client.js";
 import {SkyboxNode} from "./render/nodes/skybox.js";
 import {quat} from "./third-party/gl-matrix/src/gl-matrix.js";
+import {isPowerOf2} from "./util/texture-loader.js";
 
 export const xrClient = new VoqalXRClient({
     webSocketURL: "wss://signal.voqal.dev:443",
@@ -140,10 +141,6 @@ function onSessionStarted(session) {
 
         session.requestAnimationFrame(onXRFrame);
     });
-
-    function isPowerOf2(value) {
-        return (value & (value - 1)) == 0;
-    }
 
     function createXRWindowLayer(xrWindow, gl, xrGLFactory, refSpace, scale, pos, orient) {
         console.log(
