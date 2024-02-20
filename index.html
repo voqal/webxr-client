@@ -18,7 +18,9 @@
 </main>
 <script type="module" src='js/voqal-webxr.js'></script>
 <script>
-    if (!window.location.href.endsWith('/') && window.location.hostname === 'voqal.dev') {
+    if (window.location.hostname === 'voqal.dev' &&
+        !window.location.href.endsWith('/') &&
+        !window.location.href.endsWith('index.html')) {
         window.location.href = window.location.href + '/';
     }
 </script>
