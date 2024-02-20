@@ -234,7 +234,6 @@ function onSessionStarted(session) {
     }
 
     function addEditorStatus(editor, gl, xrGLFactory, refSpace, scale, pos, orient) {
-        // add label for editor name and position it above the quad
         let status = editor.getStatus();
         let statusMessage = editor.getStatusMessage();
         let fullStatus = "Status: " + status + (statusMessage ? " (" + statusMessage + ")" : "");
@@ -276,7 +275,6 @@ function onSessionStarted(session) {
     }
 
     function addEditorFilename(editor, gl, xrGLFactory, refSpace, scale, pos, orient) {
-        // add label for editor name and position it above the quad
         let textTexture = createLabel(gl, editor.getFilename(), "white", 18);
         let quadTexture1Width = editor.content.getImage().width;
         let quadTexture1Height = editor.content.getImage().height;
