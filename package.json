@@ -9,6 +9,6 @@
   },
   "devDependencies": {
     "@vitejs/plugin-basic-ssl": "^1.0.1",
-    "vite": "5.1.6"
+    "vite": "5.3.3"
   }
 }
